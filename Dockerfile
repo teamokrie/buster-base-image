@@ -10,7 +10,7 @@ RUN sed -i 's|http://deb.debian.org/debian|http://archive.debian.org/debian|g' /
     echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99ignore-release-date
 
 RUN apt-get -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false update \
-    && apt-get install -y --no-install-recommends \
+    && apt-get install -y --install-recommends \
         cups \
         libpoppler-glib8 \
         libqt5network5 \
