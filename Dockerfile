@@ -30,5 +30,5 @@ COPY ./hplip-3.18.12-plugin.run /tmp/hplip-3.18.12-plugin.run
 
 RUN mkdir -p /tmp/hplip-plugin-install && chmod +x /tmp/hplip-3.18.12-plugin.run && \
     cd /tmp && ./hplip-3.18.12-plugin.run --noexec --target /tmp/hplip-plugin-install && \
-    cd /tmp/hplip-plugin-install && yes | ./hplip-plugin-install && \
+    cd /tmp/hplip-plugin-install && yes | ./hplip-plugin-install -i && \
     rm -rf /tmp/hplip-3.18.12-plugin.run /tmp/hplip-plugin-install
